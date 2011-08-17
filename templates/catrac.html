@@ -1,0 +1,57 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="layout.html" />
+  <head>
+    <title>Baseline</title>    
+  </head>
+
+  <body>
+    <!-- <div id="ctxtnav" class="nav"></div> -->
+
+    <div id="content" class="helloworld">		
+		<h1>Catrac</h1>		
+	    <table border="" class="tb" cellpadding="10px" cellspacing="0" style="width: 350px">
+	    	<thead>
+		    	<tr>
+		    		<td>Name</td>
+		    		<td>Internal Task ID</td>		    		
+		    	</tr>
+	    	</thead>
+	    	<tbody>
+			    <py:for each="item in data">
+		   			<tr>	   				
+		   				<td>${item._name}</td>
+		   				<td>${item._internalTaskID}</td>		   					   										  				    	
+		   			</tr>
+				</py:for>
+			</tbody>
+		</table>   
+		
+		<div id="demo1" class="demo">
+			<ul>
+				<py:for each="item in data">
+			   		<li><a href="#" id="teste">${item._name}</a>
+			   			<ul>						
+							<py:for each="x in range(3)">   		
+						   		<li><a href="#">item${x}</a></li>
+							</py:for>		   								
+						</ul>
+			   		</li>
+				</py:for>				
+			</ul>				
+		</div>
+		<script type="text/javascript" class="source">
+		$(function () {
+			$("#demo1").jstree({ 
+				"plugins" : [ "themes", "html_data", "checkbox", "sort", "ui" ]
+			});			
+		});
+		
+		</script>
+    </div>
+  </body>
+</html>
