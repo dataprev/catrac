@@ -1,0 +1,9 @@
+*.pyc
+*.swp
+*.py~
+*.html~
+*.egg-info
+*.*~
+tags
+build
+dist
